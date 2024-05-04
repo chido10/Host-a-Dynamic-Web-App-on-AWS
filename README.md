@@ -1,5 +1,3 @@
-![Alt text](Html.png)
-
 # Dynamic Website Hosting on AWS
 
 This project showcases the deployment and hosting of a dynamic website on AWS, integrating various services and components to ensure top-notch performance, scalability, security, and fault tolerance.
@@ -36,6 +34,57 @@ The deployment process for this infrastructure is automated via scripts and conf
 2. Follow the instructions outlined in the repository's documentation to establish the necessary AWS resources.
 3. Deploy the website code and assets to the designated S3 bucket.
 4. Access the website using the registered domain name.
+
+
+### Implementation Details
+
+I hosted a Dynamic Website on AWS for a DevOps project and utilized the following resources:
+
+1. **Virtual Private Cloud (VPC)**:
+   - Configured a VPC with both public and private subnets spanning two availability zones.
+
+2. **Internet Gateway**:
+   - Deployed an Internet Gateway to enable connectivity between the VPC instances and the wider internet.
+
+3. **Security Groups**:
+   - Established Security Groups to serve as a network firewall mechanism.
+
+4. **Availability Zones**:
+   - Leveraged two Availability Zones to increase system reliability and fault tolerance.
+
+5. **Public Subnets**:
+   - Utilized Public Subnets for infrastructure components like the NAT Gateway and Application Load Balancer.
+
+6. **EC2 Instance Connect Endpoint**:
+   - Implemented EC2 Instance Connect Endpoint for secure connections to assets within both public and private subnets.
+
+7. **Private Subnets**:
+   - Placed web servers (EC2 instances) within Private Subnets for enhanced security.
+
+8. **NAT Gateway**:
+   - Allowed instances in both the private Application and Data subnets to access the Internet via the NAT Gateway.
+
+9. **Website Hosting**:
+   - Hosted the website on EC2 Instances.
+
+10. **Application Load Balancer (ALB)**:
+    - Used an Application Load Balancer and a target group for evenly distributing web traffic to an Auto Scaling Group of EC2 instances across multiple Availability Zones.
+
+11. **Auto Scaling Group (ASG)**:
+    - Utilized an Auto Scaling Group to automatically manage EC2 instances, ensuring website availability, scalability, fault tolerance, and elasticity.
+
+12. **Certificate Manager (ACM)**:
+    - Secured application communications using a Certificate Manager.
+
+13. **Simple Notification Service (SNS)**:
+    - Configured Simple Notification Service (SNS) to alert about activities within the Auto Scaling Group.
+
+14. **Domain Registration and DNS**:
+    - Registered the domain name and set up a DNS record using Route 53.
+
+15. **S3 Storage**:
+    - Used S3 to store application codes.
+
 
 ## Contributing
 
